@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PartitionsController!{% endblock %}
+
+{% block body %}
+    Partitions de piano
+
+    {% for partition in partitions %}
+        <h1>{{ partition.name }}</h1>
+        <p>{{ partition.description }}</p>
+        <small>Créer le: {{ partition.createdAt|date('d/m/y') }}</small>
+        <small>Modifier le: {{ partition.updatedAt|date('d/m/y') }}</small>
+        <a href="{{ path('partitions.edit', {id: partition.id}) }}">Modifier</a>
+        <a href="{{ path('partitions.delete', {id: partition.id}) }}">Suppression</a>
+    {% endfor %}
+    
+{% endblock %}
