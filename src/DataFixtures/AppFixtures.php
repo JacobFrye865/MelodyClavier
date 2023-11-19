@@ -29,16 +29,6 @@ class AppFixtures extends Fixture
             $manager->persist($partitions);
        }
 
-       for ($i=0; $i < 5; $i++) { 
-        $user = new User();
-        $user->setFirstname($this->faker->firstName())
-             ->setLastname($this->faker->lastName())
-             ->setEmail($this->faker->email())
-             ->setPassword('password');
-
-        $manager->persist($user);
-       }
-
         $manager->flush();
     }
 }

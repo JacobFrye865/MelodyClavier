@@ -7,6 +7,7 @@
 
     {% for partition in partitions %}
         <h1>{{ partition.name }}</h1>
+        <img src="{{vich_uploader_asset(partition, 'imageFile') }}">
         <p>{{ partition.description }}</p>
         <small>Créer le: {{ partition.createdAt|date('d/m/y') }}</small>
         <small>Modifier le: {{ partition.updatedAt|date('d/m/y') }}</small>
