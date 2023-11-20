@@ -83,4 +83,13 @@ class PartitionsController extends AbstractController
 
         return $this->redirectToRoute('app_partitions');
     }
+
+    #[Route('/partitions/{id}', name: 'partitions.show', methods: ['GET'])]
+    public function show(int $id, PartitionsRepository $repository): Response
+    {
+        $partitions = $repository->findOneBy(['id' => $id]);
+        return $this->render('pages/partitions/show.html.twig', [
+            'partitions' => $partitions
+        ]);
+    }
 }

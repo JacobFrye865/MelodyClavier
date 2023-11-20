@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1>{{ partitions.name }}</h1>
+    <img src="{{ vich_uploader_asset(partitions, 'imageFile') }}">
+    <p>{{ partitions.description }}</p>
+    <p>
+        <small>Créer le: {{ partitions.createdAt|date('d/m/y') }}</small>
+    </p>
+    <p>
+        <small>Modifier le: {{ partitions.updatedAt|date('d/m/y') }}</small>
+    </p>
+{% endblock %}
