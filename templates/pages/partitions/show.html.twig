@@ -3,13 +3,15 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <h1>{{ partitions.name }}</h1>
-    <img src="{{ vich_uploader_asset(partitions, 'imageFile') }}">
-    <p>{{ partitions.description }}</p>
-    <p>
-        <small>Créer le: {{ partitions.createdAt|date('d/m/y') }}</small>
-    </p>
-    <p>
-        <small>Modifier le: {{ partitions.updatedAt|date('d/m/y') }}</small>
-    </p>
+    <div class="container mt-4">
+        <h1 class="text-center">{{ partitions.name }}</h1>
+        <img class="mt-3" src="{{ vich_uploader_asset(partitions, 'imageFile') }}">
+        <p class="mt-3">{{ partitions.description }}</p>
+        <p class="mt-3">
+            <small>Créer le: {{ partitions.createdAt|date('d/m/y') }}</small>
+        </p>
+        <p class="mt-3">
+            <small>Modifier le: {{ partitions.updatedAt|date('d/m/y') }}</small>
+        </p>
+    </div>
 {% endblock %}

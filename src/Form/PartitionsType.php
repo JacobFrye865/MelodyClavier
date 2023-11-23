@@ -21,7 +21,7 @@ class PartitionsType extends AbstractType
                 ],
                 'label' => 'Nom de la partition',
                 'label_attr' => [
-                    'class' => 'form_label'
+                    'class' => 'form_label mt-4'
                 ]
             ])
             ->add('imageFile', VichImageType::class, [
@@ -36,12 +36,12 @@ class PartitionsType extends AbstractType
                 ],
                 'label' => 'Description de la partition',
                 'label_attr' => [
-                    'class' => 'form-label'
+                    'class' => 'form-label mt-4'
                 ]
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-4'
                 ],
                 'label' => 'Ajouter/ Modifier une partition'
             ])

@@ -13,11 +13,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PartitionsController extends AbstractController
 {
-    #[Route('/partitions', name: 'app_partitions')]
+    #[Route('/', name: 'app_partitions')]
     public function index(PartitionsRepository $repository): Response
     {
         $partitions = $repository->findAll(); 
-        return $this->render('pages/partitions/index.html.twig', [
+        return $this->render('pages/index.html.twig', [
             'partitions' => $partitions,
         ]);
     }

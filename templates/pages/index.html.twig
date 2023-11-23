@@ -1,7 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello PartitionsController!
+{% endblock %}
 
 {% block body %}
-    Ceci est la page d'accueil
+
+	<div class="container mt-4">
+		<div class="row">
+			{% for partition in partitions %}
+				<div class="col-md-6 mb-3">
+					<div class="card">
+						<div class="card-body">
+							<h1 class="card-title">{{ partition.name }}</h1>
+							<p class="card-text">{{ partition.description }}</p>
+							<a href="{{ path('partitions.show', {id: partition.id}) }}" class="btn btn-dark">Afficher</a>
+							<small>Créer le:
+								{{ partition.createdAt|date('d/m/y') }}</small>
+							<small>Modifier le:
+								{{ partition.updatedAt|date('d/m/y') }}</small>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}
