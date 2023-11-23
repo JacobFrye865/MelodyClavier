@@ -6,7 +6,7 @@
     <div class="container mt-4">
         <h1 class="text-center">{{ partitions.name }}</h1>
         <img class="mt-3" src="{{ vich_uploader_asset(partitions, 'imageFile') }}">
-        <p class="mt-3">{{ partitions.description }}</p>
+        <p class="mt-3">{{ partitions.description|raw }}</p>
         <p class="mt-3">
             <small>Créer le: {{ partitions.createdAt|date('d/m/y') }}</small>
         </p>

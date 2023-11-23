@@ -12,7 +12,7 @@
 					<div class="card">
 						<div class="card-body">
 							<h1 class="card-title">{{ partition.name }}</h1>
-							<p class="card-text">{{ partition.description }}</p>
+							<p class="card-text">{{ partition.description|raw }}</p>
 							<a href="{{ path('partitions.show', {id: partition.id}) }}" class="btn btn-dark">Afficher</a>
 							<small>Créer le:
 								{{ partition.createdAt|date('d/m/y') }}</small>

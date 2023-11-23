@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PartitionsController extends AbstractController
 {
-    #[Route('/', name: 'app_partitions')]
+    #[Route('/', name: 'app_index', methods: ['GET'])]
     public function index(PartitionsRepository $repository): Response
     {
         $partitions = $repository->findAll(); 
